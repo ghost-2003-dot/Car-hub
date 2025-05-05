@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Form - Car Hub</title>
+  <style>
+    body {
+      background-image: url('Dashboard.jpeg'); /* Use a subtle car-themed image */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      max-width: 600px;
+      margin: 80px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff0000a8;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #f8c301;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+      background-color: #222;
+      color: #fff;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      width: 100%;
+      background-color: #f8c301;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #d4a900;
+    }
+
+    .car-icon {
+      display: block;
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 10px;
+      color: #f8c301;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="car-icon">🚗</div>
+    <h2>Car Hub Feedback</h2>
+    <p style="text-align:center;">We value your thoughts! Let us know what we can do better.</p>
+    
+    <form id="feedbackForm" onsubmit="showThankYou(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="">Choose...</option>
+        <option value="5">★★★★★ - Excellent</option>
+        <option value="4">★★★★☆ - Very Good</option>
+        <option value="3">★★★☆☆ - Good</option>
+        <option value="2">★★☆☆☆ - Fair</option>
+        <option value="1">★☆☆☆☆ - Poor</option>
+      </select>
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Tell us what you think..." required></textarea>
+
+      <button type="submit">🚀 Submit Feedback</button>
+    </form>
+
+    <div class="thank-you" id="thankYouMsg">
+      ✅ Thank you for your feedback!
+    </div>
+  </div>
+
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      document.getElementById("feedbackForm").style.display = "none";
+      document.getElementById("thankYouMsg").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+

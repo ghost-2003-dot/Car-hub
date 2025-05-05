@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Hub - Premium & Custom Cars</title>
+  <meta name="description" content="Explore Car Hub – your home for luxury, sport, and customizable vehicles. Discover our lineup and personalize your dream car today." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    /* Sticky Navbar */
+    nav.main-nav {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
+
+    /* Hero Section */
+    header {
+      position: relative;
+      background-image: url('Black and White Vintage Retro.png');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .cta-btn {
+      background-color: red;
+      color: white;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: darkred;
+    }
+
+    .filter-bar {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .filter-bar select {
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .item {
+      width: 250px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background-color: #111;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .item {
+        width: 90%;
+      }
+
+      .hero-content h1 {
+        font-size: 2em;
+      }
+
+      .cta-btn {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Contact Popup */
+    #contactPopup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 1001;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    #contactPopup input, #contactPopup textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #contactPopup button {
+      background-color: red;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+    }
+
+    .popup-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: red;
+      color: white;
+      padding: 12px 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Luxury Meets Custom</h1>
+      <a class="cta-btn" href="Custom.html">Customize Your Ride</a>
+    </div>
+  </header>
+
+  <h2>We at Car Hub provide luxury, performance, and personalization.</h2>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <label for="filter">Filter by Category:</label>
+    <select id="filter" onchange="filterCars()">
+      <option value="all">All</option>
+      <option value="luxury">Luxury</option>
+      <option value="sport">Sport</option>
+      <option value="muscle">Muscle</option>
+    </select>
+  </div>
+
+  <!-- Car Listings -->
+  <div class="container" id="carContainer">
+    <!-- Existing + New Cars -->
+    <div class="item sport"><img src="Nissan GTR.jpg"><p>Nissan GTR - $67,000.00</p></div>
+    <div class="item luxury"><img src="download (1).jpg"><p>Range Rover - $207,000.00</p></div>
+    <div class="item muscle"><img src="854081161001_5395448760001_New-Dodge-sets-record-as-most-powerful-production-car-ever-m.jpg"><p>Dodge Challenger SRT Demon - $97,000.00</p></div>
+    <div class="item luxury"><img src="Used-2016-Mercedes-Benz-CLS-AMG-CLS-63-S-Model-1689383265.jpg"><p>Mercedes-Benz CLS 63 AMG - $120,000.00</p></div>
+    <div class="item sport"><img src="mainimage.avif"><p>Porsche 918 Spyder - $800,000.00</p></div>
+    <div class="item sport"><img src="883723.png"><p>McLaren P1 - $950,000.00</p></div>
+    <div class="item muscle"><img src="Audi-RS-7-LE-ABT-Sportsline-295.jpg"><p>Audi RS7 - $128,600.00</p></div>
+    <div class="item muscle"><img src="302501_2018_Dodge_Challenger.jpg"><p>Dodge Charger Hellcat - $88,000.00</p></div>
+    <div class="item luxury"><img src="8cf55410df0f8fb65d2859b7b668b5a0.jpg"><p>Mercedes-Benz G Wagon - $167,000.00</p></div>
+    <div class="item luxury"><img src="bentley.jpeg"><p>Bentley Continental GT - $167,000.00</p></div>
+    <div class="item sport"><img src="911 GT3 RS.jpg"><p>Porsche 911 GT3 RS - $230,000.00</p></div>
+    <div class="item sport"><img src="Aventador SVJ.jpg"><p>Lamborghini Aventador SVJ - $550,000.00</p></div>
+    <div class="item muscle"><img src="AMG GT 63.jpeg"><p>Mercedes-Benz AMG GT 63 S - $180,000.00</p></div>
+    <div class="item luxury"><img src="Urus.jpg"><p>Lamborghini Urus - $250,000.00</p></div>
+    <div class="item luxury"><img src="download (2).jpg"><p>Rolls Royce Ghost v12 - $430,000.00</p></div>
+    <div class="item muscle"><img src="V8 Vantage.jpeg"><p>Aston Martin V8 Vantage - $85,000.00</p></div>
+  </div>
+
+  <footer>
+    <p style="text-align: center;">&copy; 2025 Car Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- Contact Popup Button -->
+  <button class="popup-btn" onclick="showPopup()">Contact Us</button>
+
+  <!-- Contact Popup Form -->
+  <div id="overlay" onclick="hidePopup()"></div>
+  <div id="contactPopup">
+    <h3 style="text-align:center;">Get in Touch</h3>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button onclick="hidePopup()">Send Message</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function filterCars() {
+      const filter = document.getElementById("filter").value.toLowerCase();
+      const items = document.querySelectorAll("#carContainer .item");
+      items.forEach(item => {
+        if (filter === "all" || item.classList.contains(filter)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    function showPopup() {
+      document.getElementById("contactPopup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function hidePopup() {
+      document.getElementById("contactPopup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+

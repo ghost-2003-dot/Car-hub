@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Car Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('Koenisegg-Regera-1aa.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      font-size: 3em;
+      border-radius: 10px;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .mission {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: red;
+    }
+
+    .testimonial {
+      font-style: italic;
+      background-color: #1c1c1c;
+      padding: 25px;
+      border-left: 5px solid red;
+      margin: 40px 0;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: red;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 2em;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Car Hub</h1>
+  </header>
+
+  <div class="content">
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>At Car Hub, we are passionate about redefining luxury and performance. Whether it's delivering the smooth power of a V12 or transforming your vehicle into a rolling piece of art, our goal is to offer excellence with every ride. We're driven by innovation, attention to detail, and a desire to stand out from the crowd.</p>
+    </div>
+
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Premium Inventory</h3>
+        <p>We offer some of the rarest and most sought-after vehicles, from hypercars to classic legends.</p>
+      </div>
+      <div class="feature">
+        <h3>Custom Services</h3>
+        <p>Personalize your car with professional wraps, interiors, and performance upgrades.</p>
+      </div>
+      <div class="feature">
+        <h3>Trusted Experience</h3>
+        <p>Over a decade of experience in high-end vehicle sourcing and customization.</p>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      “Car Hub turned my dream car into a reality. Their customization work is unmatched and the service was world-class.”
+      <br><br>
+      — <strong>David K.</strong>, Porsche GT3 RS Owner
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p style="margin-top: 10px;">&copy; 2025 Car Hub. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
