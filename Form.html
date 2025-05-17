@@ -15,6 +15,36 @@
       color: #fff;
     }
 
+    nav.main-nav {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
+
     .form-container {
       background-color: rgba(0, 0, 0, 0.75);
       padding: 30px;
@@ -86,6 +116,17 @@
 </head>
 
 <body>
+  
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Form.html">Feedback Page</a></li>
+    </ul>
+  </nav>
+
   <div class="form-container">
     <div class="car-icon">🚗</div>
     <h2>Car Hub Feedback</h2>
