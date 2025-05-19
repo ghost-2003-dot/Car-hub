@@ -127,12 +127,15 @@
     </ul>
   </nav>
 
-  <div class="form-container">
+ <div class="form-container">
     <div class="car-icon">🚗</div>
     <h2>Car Hub Feedback</h2>
     <p style="text-align:center;">We value your thoughts! Let us know what we can do better.</p>
-    
-    <form id="feedbackForm" onsubmit="showThankYou(event)">
+
+    <!-- Feedback Form -->
+    <form id="feedbackForm" action="https://formsubmit.co/yourname@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="_captcha" value="false">
+
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
 
@@ -156,17 +159,39 @@
     </form>
 
     <div class="thank-you" id="thankYouMsg">
-      ✅ Thank you for your feedback!
+      ✅ Thank you for your feedback! Your response has been submitted.
     </div>
   </div>
 
   <script>
-    function showThankYou(event) {
+    function handleSubmit(event) {
       event.preventDefault();
-      document.getElementById("feedbackForm").style.display = "none";
-      document.getElementById("thankYouMsg").style.display = "block";
+      const form = document.getElementById("feedbackForm");
+      const thankYou = document.getElementById("thankYouMsg");
+
+      // Send form data using FormSubmit endpoint
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        } else {
+          alert("There was an error submitting the form. Please try again.");
+        }
+      }).catch(error => {
+        alert("Network error. Please try again.");
+      });
     }
   </script>
+
 </body>
-</html>
+</html> 
+ 
+ 
 
