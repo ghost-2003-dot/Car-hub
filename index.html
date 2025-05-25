@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Car Hub - Premium & Custom Cars</title>
   <meta name="description" content="Explore Car Hub – your home for luxury, sport, and customizable vehicles. Discover our lineup and personalize your dream car today." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS --> 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -24,13 +21,14 @@
       top: 0;
       background-color: #111;
       z-index: 999;
+      display: flex;
+      justify-content: center;
       padding: 10px 0;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
       gap: 40px;
       margin: 0;
       padding: 0;
@@ -44,8 +42,8 @@
     }
 
     nav ul li a:hover {
-      color: #ddd;
       text-decoration: underline;
+      color: #ddd;
     }
 
     /* Hero Section */
@@ -125,7 +123,7 @@
       text-align: center;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
+      animation: fadeInUp 0.8s ease forwards;
     }
 
     .item img {
@@ -228,10 +226,10 @@
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="#carContainer">Gallery</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
       <li><a href="About.html">About</a></li>
       <li><a href="Contact.html">Contact</a></li>
-      <li><a href="Form.html">Feedback</a></li>
+      <li><a href="Form.html">Feedback Page</a></li>
     </ul>
   </nav>
 
@@ -258,22 +256,23 @@
 
   <!-- Car Listings -->
   <div class="container" id="carContainer">
-    <div class="item sport"><img src="Nissan GTR.jpg" alt="Nissan GTR"><p>Nissan GTR - $67,000.00</p></div>
-    <div class="item luxury"><img src="download (1).jpg" alt="Range Rover"><p>Range Rover - $207,000.00</p></div>
-    <div class="item muscle"><img src="854081161001_5395448760001_New-Dodge-sets-record-as-most-powerful-production-car-ever-m.jpg" alt="Dodge Demon"><p>Dodge Challenger SRT Demon - $97,000.00</p></div>
-    <div class="item luxury"><img src="Used-2016-Mercedes-Benz-CLS-AMG-CLS-63-S-Model-1689383265.jpg" alt="CLS 63 AMG"><p>Mercedes-Benz CLS 63 AMG - $120,000.00</p></div>
-    <div class="item sport"><img src="mainimage.avif" alt="Porsche 918"><p>Porsche 918 Spyder - $800,000.00</p></div>
-    <div class="item sport"><img src="883723.png" alt="McLaren P1"><p>McLaren P1 - $950,000.00</p></div>
-    <div class="item muscle"><img src="Audi-RS-7-LE-ABT-Sportsline-295.jpg" alt="Audi RS7"><p>Audi RS7 - $128,600.00</p></div>
-    <div class="item muscle"><img src="302501_2018_Dodge_Challenger.jpg" alt="Dodge Charger"><p>Dodge Charger Hellcat - $88,000.00</p></div>
-    <div class="item luxury"><img src="8cf55410df0f8fb65d2859b7b668b5a0.jpg" alt="G Wagon"><p>Mercedes-Benz G Wagon - $167,000.00</p></div>
-    <div class="item luxury"><img src="bentley.jpeg" alt="Bentley"><p>Bentley Continental GT - $167,000.00</p></div>
-    <div class="item sport"><img src="911 GT3 RS.jpg" alt="Porsche 911 GT3 RS"><p>Porsche 911 GT3 RS - $230,000.00</p></div>
-    <div class="item sport"><img src="Aventador SVJ.jpg" alt="Lamborghini Aventador"><p>Lamborghini Aventador SVJ - $550,000.00</p></div>
-    <div class="item muscle"><img src="AMG GT 63.jpeg" alt="AMG GT 63"><p>Mercedes-Benz AMG GT 63 S - $180,000.00</p></div>
-    <div class="item luxury"><img src="Urus.jpg" alt="Lamborghini Urus"><p>Lamborghini Urus - $250,000.00</p></div>
-    <div class="item luxury"><img src="download (2).jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost v12 - $430,000.00</p></div>
-    <div class="item muscle"><img src="V8 Vantage.jpeg" alt="Aston Martin"><p>Aston Martin V8 Vantage - $85,000.00</p></div>
+    <!-- Existing + New Cars -->
+    <div class="item sport"><img src="Nissan GTR.jpg"><p>Nissan GTR - $67,000.00</p></div>
+    <div class="item luxury"><img src="download (1).jpg"><p>Range Rover - $207,000.00</p></div>
+    <div class="item muscle"><img src="854081161001_5395448760001_New-Dodge-sets-record-as-most-powerful-production-car-ever-m.jpg"><p>Dodge Challenger SRT Demon - $97,000.00</p></div>
+    <div class="item luxury"><img src="Used-2016-Mercedes-Benz-CLS-AMG-CLS-63-S-Model-1689383265.jpg"><p>Mercedes-Benz CLS 63 AMG - $120,000.00</p></div>
+    <div class="item sport"><img src="mainimage.avif"><p>Porsche 918 Spyder - $800,000.00</p></div>
+    <div class="item sport"><img src="883723.png"><p>McLaren P1 - $950,000.00</p></div>
+    <div class="item muscle"><img src="Audi-RS-7-LE-ABT-Sportsline-295.jpg"><p>Audi RS7 - $128,600.00</p></div>
+    <div class="item muscle"><img src="302501_2018_Dodge_Challenger.jpg"><p>Dodge Charger Hellcat - $88,000.00</p></div>
+    <div class="item luxury"><img src="8cf55410df0f8fb65d2859b7b668b5a0.jpg"><p>Mercedes-Benz G Wagon - $167,000.00</p></div>
+    <div class="item luxury"><img src="bentley.jpeg"><p>Bentley Continental GT - $167,000.00</p></div>
+    <div class="item sport"><img src="911 GT3 RS.jpg"><p>Porsche 911 GT3 RS - $230,000.00</p></div>
+    <div class="item sport"><img src="Aventador SVJ.jpg"><p>Lamborghini Aventador SVJ - $550,000.00</p></div>
+    <div class="item muscle"><img src="AMG GT 63.jpeg"><p>Mercedes-Benz AMG GT 63 S - $180,000.00</p></div>
+    <div class="item luxury"><img src="Urus.jpg"><p>Lamborghini Urus - $250,000.00</p></div>
+    <div class="item luxury"><img src="download (2).jpg"><p>Rolls Royce Ghost v12 - $430,000.00</p></div>
+    <div class="item muscle"><img src="V8 Vantage.jpeg"><p>Aston Martin V8 Vantage - $85,000.00</p></div>
   </div>
 
   <footer>
@@ -299,7 +298,11 @@
       const filter = document.getElementById("filter").value.toLowerCase();
       const items = document.querySelectorAll("#carContainer .item");
       items.forEach(item => {
-        item.style.display = (filter === "all" || item.classList.contains(filter)) ? "block" : "none";
+        if (filter === "all" || item.classList.contains(filter)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
       });
     }
 
@@ -314,7 +317,10 @@
     }
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS and dependencies --> 
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js">
+ </script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
