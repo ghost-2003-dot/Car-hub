@@ -6,7 +6,7 @@
   <title>Feedback Form - Car Hub</title>
   <style>
     body {
-      background-image: url('Dashboard.jpeg'); /* Use a subtle car-themed image */
+      background-image: url('Dashboard.jpeg');
       background-size: cover;
       background-position: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -76,8 +76,8 @@
       padding: 10px;
       margin-top: 5px;
       border-radius: 8px;
-      border: none;
-      background-color: #222;
+      border: 1px solid #555;
+      background-color: #1e1e1e;
       color: #fff;
     }
 
@@ -91,6 +91,7 @@
       font-size: 16px;
       cursor: pointer;
       font-weight: bold;
+      transition: background-color 0.3s ease-in-out;
     }
 
     button:hover {
@@ -98,7 +99,6 @@
     }
 
     .car-icon {
-      display: block;
       text-align: center;
       font-size: 50px;
       margin-bottom: 10px;
@@ -112,11 +112,23 @@
       margin-top: 20px;
       color: #0f0;
     }
+
+    @media (max-width: 600px) {
+      .form-container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  
+
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -127,23 +139,26 @@
     </ul>
   </nav>
 
- <div class="form-container">
+  <div class="form-container">
     <div class="car-icon">🚗</div>
     <h2>Car Hub Feedback</h2>
     <p style="text-align:center;">We value your thoughts! Let us know what we can do better.</p>
 
     <!-- Feedback Form -->
     <form id="feedbackForm" action="https://formsubmit.co/jordanletlhogonolo072@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+      <!-- FormSubmit hidden config -->
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Feedback Submission from Car Hub!">
+      <input type="hidden" name="_autoresponse" value="Thank you for your feedback! We appreciate your input.">
 
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" id="name" name="name" required aria-label="Your Name"/>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" required aria-label="Your Email"/>
 
       <label for="rating">Rating:</label>
-      <select id="rating" name="rating" required>
+      <select id="rating" name="rating" required aria-label="Rate our service">
         <option value="">Choose...</option>
         <option value="5">★★★★★ - Excellent</option>
         <option value="4">★★★★☆ - Very Good</option>
@@ -153,9 +168,9 @@
       </select>
 
       <label for="comments">Comments:</label>
-      <textarea id="comments" name="comments" placeholder="Tell us what you think..." required></textarea>
+      <textarea id="comments" name="comments" placeholder="Tell us what you think..." required aria-label="Your Comments"></textarea>
 
-      <button type="submit">🚀 Submit Feedback</button>
+      <button type="submit" id="submitBtn">🚀 Submit Feedback</button>
     </form>
 
     <div class="thank-you" id="thankYouMsg">
@@ -168,8 +183,11 @@
       event.preventDefault();
       const form = document.getElementById("feedbackForm");
       const thankYou = document.getElementById("thankYouMsg");
+      const button = document.getElementById("submitBtn");
 
-      // Send form data using FormSubmit endpoint
+      button.disabled = true;
+      button.textContent = "Submitting...";
+
       fetch(form.action, {
         method: "POST",
         body: new FormData(form),
@@ -183,15 +201,17 @@
           thankYou.style.display = "block";
         } else {
           alert("There was an error submitting the form. Please try again.");
+          button.disabled = false;
+          button.textContent = "🚀 Submit Feedback";
         }
       }).catch(error => {
         alert("Network error. Please try again.");
+        button.disabled = false;
+        button.textContent = "🚀 Submit Feedback";
       });
     }
   </script>
 
 </body>
-</html> 
- 
- 
+</html>
 
